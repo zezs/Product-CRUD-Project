@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Details</title>
+</head>
+<body>
+    <form method="POST" action="/products/<%=product.id%>?_method=PUT" >
+        
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="<%=product.name%>">
+        <br>
+        <label for="price" step="0.01">Price:</label>
+        <input type="number" id="price" name="price" value="<%=product.price%>">
+        <br>
+        <label for="category">category</label>
+        <select name="category" id="category" value="<%=product.category%>">
+            <option value="fruit"     <%=product.category === 'fruit' ? 'selected' : ''%>>fruit</option>
+            <option value="vegetable" <%=product.category === 'vegetable' ? 'selected' : ''%>>vegetable</option>
+            <option value="dairy"     <%=product.category === 'dairy' ? 'selected' : ''%>>dairy</option>
+        </select>   
+        <br>
+        <button>submit</button>
+    </form>
+    <a href="/products/<%=product.id%>">back</a>
+</body>
+</html>
+
